@@ -3,6 +3,8 @@ from tkinter import *
 answer = None
 root = Tk()
 
+# defining functions used by the buttons
+
 
 def yes():
     global answer
@@ -21,6 +23,7 @@ def idk():
     answer = True
 
 
+# This section is the GUI that runs on the smarti touch pi
 root.update()
 root.resizable(width=False, height=False)
 
@@ -45,10 +48,14 @@ button1.pack(side=LEFT)
 button2.pack(side=LEFT)
 button3.pack(side=LEFT)
 
-
+# Here begins the if elif chain
+# each one of these waits for a button prompt using button1.wait_variable(var)
+# each also reprints the question label using printing()
+# this gives an updating UI that changes on new answer submission
 Prompt = "Are they a West SEC Division School"
 printing()
 button1.wait_variable(var)
+
 if answer is True:
     Prompt = "Is one of their school colors Crimson?"
     answer = None
@@ -459,6 +466,7 @@ elif answer is False:
             Prompt = "You're lying."
     elif answer is False:
         Prompt = "You're lying."
+
 
 printing()
 
