@@ -1,0 +1,37 @@
+class GUI:
+    def __init__(self, master):
+        def yes():
+            answer = True
+
+        def no():
+            answer = False
+
+        def idk():
+            answer = True
+
+        question = Prompt
+
+        master.resizable(width=False, height=False)
+
+        topframe = Frame(master, height=5, width=60)
+        topframe.pack(side=TOP, fill=None, expand=False)
+
+        bottomframe = Frame(master, height=10, width=60)
+        bottomframe.pack(side=BOTTOM)
+
+        question = Label(topframe, text=question, height=5, font=10, width=60)
+
+        button1 = Button(bottomframe, text="YES", bg="green", fg="white", height=10, width=20, font=10, command=yes)
+        button2 = Button(bottomframe, text="NO", bg="red", fg="white", height=10, width=20, font=10, command=no)
+        button3 = Button(bottomframe, text="IDK", bg="blue", fg="white", height=10, width=20, font=10, command=idk)
+
+        question.pack(side=TOP)
+
+        button1.pack(side=LEFT)
+        button2.pack(side=LEFT)
+        button3.pack(side=LEFT)
+
+
+root = Tk()
+runGUI = GUI(root)
+root.mainloop()
